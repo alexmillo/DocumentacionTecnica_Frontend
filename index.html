@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" />
+
+  <title>Documentación Técnica</title>
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>JavaScript</header>
+    <ul>
+      <li>
+        <a href="#What_is_javascript" class="nav-link">¿Qué es JavaScript realmente?</a>
+      </li>
+      <li><a href="#Features" class="nav-link">Características</a></li>
+      <li>
+        <a href="#Other_features" class="nav-link">Otras características</a>
+      </li>
+      <li>
+        <a href="#Manufacturer_specific_extensions" class="nav-link">Extensiones específicas del fabricante</a>
+      </li>
+      <li>
+        <a href="#Syntax_semantics" class="nav-link">Sintaxis y semántica</a>
+      </li>
+      <li><a href="#Use" class="nav-link">Uso en páginas web</a></li>
+      <li>
+        <a href="#Compatibility_considerations" class="nav-link">Consideraciones acerca de la compatibilidad</a>
+      </li>
+      <li><a href="#Accessibility" class="nav-link">Accesibilidad</a></li>
+      <li><a href="#Security" class="nav-link">Seguridad</a></li>
+      <li>
+        <a href="#Development_tools" class="nav-link">Herramientas de desarrollo</a>
+      </li>
+      <li>
+        <a href="#Reference" class="nav-link">Referencias</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="What_is_javascript">
+      <header>¿Qué es JavaScript realmente?</header>
+      <article>
+        <p>
+          JavaScript es un robusto lenguaje de programación que se puede
+          aplicar a un documento HTML y usarse para crear interactividad
+          dinámica en los sitios web. Fue inventado por Brendan Eich,
+          cofundador del proyecto Mozilla, Mozilla Foundation y la Corporación
+          Mozilla.
+        </p>
+        <p>
+          Puedes hacer casi cualquier cosa con JavaScript. Puedes empezar con
+          pequeñas cosas como carruseles, galerías de imágenes, diseños
+          fluctuantes, y respuestas a las pulsaciones de botones. Con más
+          experiencia, serás capaz de crear juegos, animaciones 2D y gráficos
+          3D, aplicaciones integradas basadas en bases de datos ¡y mucho más!
+        </p>
+        <p>
+          JavaScript por sí solo es bastante compacto aunque muy flexible, y
+          los desarrolladores han escrito gran cantidad de herramientas encima
+          del núcleo del lenguaje JavaScript, desbloqueando una gran cantidad
+          de funcionalidad adicional con un mínimo esfuerzo. Esto incluye:
+        </p>
+        <ul>
+          <li>
+            Interfaces de Programación de Aplicaciones del Navegador (APIs) —
+            APIs construidas dentro de los navegadores que ofrecen
+            funcionalidades como crear dinámicamente contenido HTML y
+            establecer estilos CSS, hasta capturar y manipular un vídeo desde
+            la cámara web del usuario, o generar gráficos 3D y muestras de
+            sonido.
+          </li>
+          <li>
+            APIs de terceros, que permiten a los desarrolladores incorporar
+            funcionalidades en sus sitios de otros proveedores de contenidos
+            como Twitter o Facebook.
+          </li>
+          <li>
+            Marcos de trabajo y librerías de terceros que puedes aplicar a tu
+            HTML para que puedas construir y publicar rápidamente sitios y
+            aplicaciones.
+          </li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Features">
+      <header>Características</header>
+      <article>
+        <p>
+          Las siguientes características son comunes a todas las
+          implementaciones que se ajustan al estándar ECMAScript, a menos que
+          especifique explícitamente en caso contrario.
+        </p>
+        <h4>Imperativo y estructurado</h4>
+        <p>
+          JavaScript es compatible con gran parte de la estructura de
+          programación de C. Con una salvedad, en parte: en C, el ámbito de
+          las variables alcanza al bloque en el cual fueron definidas; sin
+          embargo JavaScript no es compatible con esto, puesto que el ámbito
+          de las variables es el de la función en la cual fueron declaradas.
+          Esto cambia con la versión de ECMAScript 2015, ya que añade
+          compatibilidad con block scoping por medio de la palabra clave let.
+          Como en C, JavaScript hace distinción entre expresiones y
+          sentencias. Una diferencia sintáctica con respecto a C es la
+          inserción automática de punto y coma, es decir, en JavaScript los
+          puntos y coma que finalizan una sentencia pueden ser omitidos.
+        </p>
+        <h4>Dinámicos</h4>
+        <h5>Tipado dinámico</h5>
+        <p>
+          Como en la mayoría de lenguajes de scripting, el tipo está asociado
+          al valor, no a la variable. Por ejemplo, una variable x en un
+          momento dado puede estar ligada a un número y más adelante, religada
+          a una cadena. JavaScript es compatible con varias formas de
+          comprobar el tipo de un objeto, incluyendo duck typing. Una forma de
+          saberlo es por medio de la palabra clave typeof.
+        </p>
+        <h5>Objetual</h5>
+        <p>
+          JavaScript está formado casi en su totalidad por objetos. Los
+          objetos en JavaScript son arrays asociativos, mejorados con la
+          inclusión de prototipos (ver más adelante). Los nombres de las
+          propiedades de los objetos son claves de tipo cadena: obj.x = 10 y
+          obj['x'] = 10 son equivalentes, siendo azúcar sintáctico la notación
+          con punto. Las propiedades y sus valores pueden ser creados,
+          cambiados o eliminados en tiempo de ejecución. La mayoría de
+          propiedades de un objeto (y aquellas que son incluidas por la cadena
+          de la herencia prototípica) pueden ser enumeradas a por medio de la
+          instrucción de bucle for... in. JavaScript tiene un pequeño número
+          de objetos predefinidos como son Function y Date.
+        </p>
+        <h5>Evaluación en tiempo de ejecución</h5>
+        <p>
+          JavaScript incluye la función eval que permite evaluar expresiones
+          expresadas como cadenas en tiempo de ejecución. Por ello se
+          recomienda que eval sea utilizado con precaución y que se opte por
+          utilizar la función JSON.parse() en la medida de lo posible, pues
+          puede resulta mucho más segura.
+        </p>
+        <h4>Funcional</h4>
+        <h5>Funciones de primera clase</h5>
+        <p>
+          A las funciones se les suele llamar ciudadanos de primera clase; son
+          objetos en sí mismos. Como tal, poseen propiedades y métodos, como
+          .call() y .bind(). Una función anidada es una función definida
+          dentro de otra. Esta es creada cada vez que la función externa es
+          invocada. Además, cada función creada forma una clausura; es el
+          resultado de evaluar un ámbito conteniendo en una o más variables
+          dependientes de otro ámbito externo, incluyendo constantes,
+          variables locales y argumentos de la función externa llamante. El
+          resultado de la evaluación de dicha clausura forma parte del estado
+          interno de cada objeto función, incluso después de que la función
+          exterior concluya su evaluación.
+        </p>
+        <h4>Prototípico</h4>
+        <h5>Prototipos</h5>
+        <p>
+          JavaScript usa prototipos en vez de clases para el uso de herencia.
+          Es posible llegar a emular muchas de las características que
+          proporcionan las clases en lenguajes orientados a objetos
+          tradicionales por medio de prototipos en JavaScript.
+        </p>
+        <h4>Funciones como constructores de objetos</h4>
+        <p>
+          Las funciones también se comportan como constructores. Prefijar una
+          llamada a la función con la palabra clave new crear una nueva
+          instancia de un prototipo, que heredan propiedades y métodos del
+          constructor (incluidas las propiedades del prototipo de Object).
+          ECMAScript 5 ofrece el método Object.create, permitiendo la creación
+          explícita de una instancia sin tener que heredar automáticamente del
+          prototipo de Object (en entornos antiguos puede aparecer el
+          prototipo del objeto creado como null).
+        </p>
+        <p>
+          La propiedad prototype del constructor determina el objeto usado
+          para el prototipo interno de los nuevos objetos creados. Se pueden
+          añadir nuevos métodos modificando el prototipo del objeto usado como
+          constructor. Constructores predefinidos en JavaScript, como Array u
+          Object, también tienen prototipos que pueden ser modificados. Aunque
+          esto sea posible se considera una mala práctica modificar el
+          prototipo de Object ya que la mayoría de los objetos en Javascript
+          heredan los métodos y propiedades del objeto prototype, objetos los
+          cuales pueden esperar que estos no hayan sido modificados.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Other_features">
+      <header>Otras características</header>
+      <article>
+        <h4>Entorno de ejecución</h4>
+        <p>
+          JavaScript normalmente depende del entorno en el que se ejecute (por
+          ejemplo, en un navegador web) para ofrecer objetos y métodos por los
+          que los scripts pueden interactuar con el "mundo exterior". De
+          hecho, depende del entorno para ser capaz de proporcionar la
+          capacidad de incluir o importar scripts (por ejemplo, en HTML por
+          medio del tag < scripts>). (Esto no es una característica del
+            lenguaje, pero es común en la mayoría de las implementaciones de
+            JavaScript.)
+        </p>
+        <h4>Funciones variádicas</h4>
+        <p>
+          Un número indefinido de parámetros pueden ser pasados a la función.
+          La función puede acceder a ellos a través de los parámetros o
+          también a través del objeto local arguments. Las funciones
+          variádicas también pueden ser creadas usando el método .apply().
+        </p>
+        <h4>Funciones como métodos</h4>
+        <p>
+          A diferencia de muchos lenguajes orientados a objetos, no hay
+          distinción entre la definición de función y la definición de método.
+          Más bien, la distinción se produce durante la llamada a la función;
+          una función puede ser llamada como un método. Cuando una función es
+          llamada como un método de un objeto, la palabra clave this, que es
+          una variable local a la función, representa al objeto que invocó
+          dicha función.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Manufacturer_specific_extensions">
+      <header>Extensiones específicas del fabricante</header>
+      <article>
+        <p>
+          JavaScript se encuentra oficialmente bajo la organización de Mozilla
+          Foundation, y periódicamente se añaden nuevas características del
+          lenguaje. Sin embargo, sólo algunos motores JavaScript son
+          compatibles con estas características:
+        </p>
+        <ul>
+          <li>
+            Las propiedades get y set (también compatibles con WebKit, Opera,
+            ActionScript y Rhino).
+          </li>
+          <li>Cláusulas catch condicionales.</li>
+          <li>Protocolo iterador adoptado de Python.</li>
+          <li>Corrutinas también adoptadas de Python.</li>
+          <li>
+            Generación de listas y expresiones por comprensión también
+            adoptado de Python.
+          </li>
+          <li>
+            Establecer el ámbito a bloque a través de la palabra clave let.
+          </li>
+          <li>
+            Desestructuración de arrays y objetos (forma limita de
+            emparejamiento de patrones).
+          </li>
+          <li>Expresiones concretas en funciones (function(args) expr).</li>
+          <li>
+            ECMAScript para XML (E4X), una extensión que añade compatibilidad
+            nativa XML a ECMAScript.
+          </li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Syntax_semantics">
+      <header>Sintaxis y semántica</header>
+      <article>
+        <p>
+          La última versión del lenguaje es ECMAScript 2016 publicada el 17 de
+          junio de 2016.
+        </p>
+        <h4>Ejemplos sencillos</h4>
+        <p>
+          Las variables en JavaScript se definen usando la palabra clave var:
+        </p>
+        <code>var x; // define la variable x, aunque no tiene ningún valor asignado por defecto <br>
+            var y = 2; // define la variable y y le asigna el valor 2 a ella
+          </code>
+        <p>
+          A considerar los comentarios en el ejemplo de arriba, los cuales van
+          precedidos con 2 barras diagonales.
+        </p>
+        <p>
+          No existen funcionalidades para I/O incluidas en el lenguaje; el
+          entorno de ejecución ya lo proporciona. La especificación ECMAScript
+          en su edición 5.1 hace mención
+        </p>
+        <p>
+          Sin embargo, la mayoría de los entornos de ejecución tiene un objeto
+          llamado console que puede ser usado para imprimir por el flujo de
+          salida de la consola de depuración. He aquí un simple programa que
+          imprime “Hello world!”:
+        </p>
+        <code> console.log("Hello world!"); </code>
+        <p>Una función recursiva:</p>
+        <code>function factorial(n) {
+            if (n === 0) {
+              return 1; 
+            } 
+            return n * factorial(n - 1);
+          }
+        </code>
+        <p>Ejemplos de función anónima (o función lambda) y una clausura:</p>
+        <code>var displayClosure = function() { 
+            var count = 0; 
+            return function () { 
+              return ++count; 
+            }; 
+          } 
+          var inc = displayClosure(); 
+          inc(); // devuelve 1  
+          inc(); // devuelve 2  
+          inc(); // devuelve 3 
+        </code>
+        <p>
+          Las expresiones con invocación automática permiten a las funciones
+          pasarle variables por parámetro dentro de sus propias clausuras.
+        </p>
+        <code>var v; 
+          v = 1; 
+          var getValue = (function(v) { 
+            return function() {return v;};
+          }(v));
+          v = 2;
+          getValue(); // 1
+        </code>
+      </article>
+    </section>
+    <section class="main-section" id="Use">
+      <header>Uso en páginas web</header>
+      <article>
+        <p>
+          El uso más común de JavaScript es escribir funciones embebidas o
+          incluidas en páginas HTML y que interactúan con el Document Object
+          Model (DOM o Modelo de Objetos del Documento) de la página. Algunos
+          ejemplos sencillos de este uso son:
+        </p>
+        <ul>
+          <li>
+            Cargar nuevo contenido para la página o enviar datos al servidor a
+            través de AJAX sin necesidad de recargar la página (por ejemplo,
+            una red social puede permitir al usuario enviar actualizaciones de
+            estado sin salir de la página).
+          </li>
+          <li>
+            Animación de los elementos de página, hacerlos desaparecer,
+            cambiar su tamaño, moverlos, etc.
+          </li>
+          <li>
+            Contenido interactivo, por ejemplo, juegos y reproducción de audio
+            y vídeo.
+          </li>
+          <li>
+            Validación de los valores de entrada de un formulario web para
+            asegurarse de que son aceptables antes de ser enviado al servidor.
+          </li>
+          <li>
+            Transmisión de información sobre los hábitos de lectura de los
+            usuarios y las actividades de navegación a varios sitios web. Las
+            páginas Web con frecuencia lo hacen para hacer análisis web,
+            seguimiento de anuncios, la personalización o para otros fines.
+          </li>
+        </ul>
+        <p>
+          Dado que el código JavaScript puede ejecutarse localmente en el
+          navegador del usuario (en lugar de en un servidor remoto), el
+          navegador puede responder a las acciones del usuario con rapidez,
+          haciendo una aplicación más sensible. Por otra parte, el código
+          JavaScript puede detectar acciones de los usuarios que HTML por sí
+          sola no puede, como pulsaciones de teclado.
+        </p>
+        <p>
+          Debido a que JavaScript es el único lenguaje por el que los más
+          populares navegadores comparten su apoyo, se ha convertido en un
+          lenguaje al que muchos frameworks en otros lenguajes compilan, a
+          pesar de que JavaScript no fue diseñado para tales propósitos.41​ A
+          pesar de las limitaciones de rendimiento inherentes a su naturaleza
+          dinámica, el aumento de la velocidad de los motores de JavaScript ha
+          hecho de este lenguaje un entorno para la compilación
+          sorprendentemente factible.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Compatibility_considerations">
+      <header>Consideraciones acerca de la compatibilidad</header>
+      <article>
+        <p>
+          Debido a que JavaScript se ejecuta en entornos muy variados, una
+          parte importante de las pruebas y la depuración es probar y
+          verificar que el código JavaScript funciona correctamente en
+          múltiples navegadores. La interfaz DOM para acceder y manipular
+          páginas web no es parte del estándar ECMAScript, o de la propia
+          JavaScript. El DOM es definido por los esfuerzos de estandarización
+          del W3C, una organización independiente. En la práctica, las
+          implementaciones que hacen de JavaScript los distintos navegadores
+          difieren tanto entre ellos mismos como de las normas del estándar.
+        </p>
+        <p>
+          Para hacer frente a estas diferencias, los autores de JavaScript
+          pudieron ser capaces de escribir código compatible con los
+          estándares que también fuera capaz de ejecutarse correctamente en la
+          mayoría de los navegadores, o en su defecto, que al menos se pudiera
+          escribir código capaz de comprobar la presencia de ciertas
+          funcionalidades del navegador y que se comportase de manera
+          diferente si no se dispusiese de dicha funcionalidad.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Accessibility">
+      <header>Accesibilidad</header>
+      <article>
+        <p>
+          Suponiendo que el usuario no haya desactivado la ejecución de código
+          JavaScript, en el lado del cliente JavaScript debe ser escrito tanto
+          con el propósito de mejorar las experiencias de los visitantes con
+          discapacidad visual o física, como el de evitar ocultar información
+          a estos visitantes.
+        </p>
+        <p>
+          Los lectores de pantalla, utilizados por los ciegos y deficientes
+          visuales, pueden ser tenidos en cuenta por JavaScript y así poder
+          acceder y leer los elementos DOM de la página. El código HTML
+          escrito debe ser lo más conciso, navegable y semánticamente rico
+          posible, tanto si JavaScript se ejecuta como si no.
+        </p>
+        <p>
+          JavaScript no debería de ser totalmente dependiente de los eventos
+          de ratón del navegador y debería ser accesible para aquellos
+          usuarios que no quieran hacer uso del ratón (informática) para
+          navegar o que opten por utilizar solamente el teclado. Hay eventos
+          independientes del dispositivo, tales como onfocus y onchange que
+          son preferibles en la mayoría de los casos.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Security">
+      <header>Seguridad</header>
+      <article>
+        <p>
+          JavaScript y el DOM permite que existan programadores que hagan un
+          uso inapropiado para introducir scripts que ejecuten código con
+          contenido malicioso sin el consentimiento del usuario y que pueda
+          así comprometer su seguridad.
+        </p>
+        <p>
+          Los desarrolladores de los navegadores tienen en cuenta este riesgo
+          utilizando dos restricciones. En primer lugar, los scripts se
+          ejecutan en un sandbox en el que sólo se pueden llevar a cabo
+          acciones relacionadas con la web, no con tareas de programación de
+          propósito general, como la creación de archivos. En segundo lugar,
+          está limitada por la política del mismo origen: los scripts de un
+          sitio web no tienen acceso a la información enviada a otro sitio web
+          (de otro dominio) como pudiera ser nombres de usuario, contraseñas o
+          cookies. La mayoría de los fallos de seguridad de JavaScript están
+          relacionados con violaciones de cualquiera de estas dos
+          restricciones.
+        </p>
+        <h4>Vulnerabilidades cross-site</h4>
+        <p>
+          Un problema común de seguridad en JavaScript es el cross-site
+          scripting o XSS, una violación de la política de mismo origen. Las
+          vulnerabilidades XSS permiten a un atacante inyectar código
+          JavaScript en páginas web visitadas por el usuario. Una de esas webs
+          podría ser la de un banco, pudiendo el atacante acceder a la
+          aplicación de banca con los privilegios de la víctima, lo que podría
+          revelar información secreta o transferir dinero sin la autorización
+          de la víctima. Una solución para las vulnerabilidades XSS es
+          utilizar HTML escaping cuando se muestre información de fuentes no
+          confiables.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Development_tools">
+      <header>Herramientas de desarrollo</header>
+      <article>
+        <p>
+          En JavaScript, disponer de un depurador se convierte en necesario
+          cuando se desarrollan grandes aplicaciones, no triviales. Dado que
+          puede haber diferencias de implementación entre los diferentes
+          navegadores (especialmente en cuanto al DOM), es útil tener acceso a
+          un depurador para cada uno de los navegadores a los cuales nuestra
+          aplicación web irá dirigido.
+        </p>
+        <p>
+          Existen algunas herramientas de ayuda a la depuración, también
+          escritas en JavaScript y construidas para ejecutarse en la Web. Un
+          ejemplo es el programa JSLint, desarrollado por Douglas Crockford,
+          quien ha escrito extensamente sobre el lenguaje. JSLint analiza el
+          código JavaScript para que este quede conforme con un conjunto de
+          normas y directrices y que aseguran su correcto funcionamiento y
+          mantenibilidad.
+        </p>
+      </article>
+    </section>
+    <section class="main'section" id="Reference">
+      <header>Referencias</header>
+      <p>Para mayor información puede consultar los siguientes enlaces:</p>
+      <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">JavaScript MDN Web Docs</a>
+      <br>
+      <a href="https://es.wikipedia.org/wiki/JavaScript">Wiki JavaScript</a>
+    </section>
+  </main>
+</body>
+
+</html>

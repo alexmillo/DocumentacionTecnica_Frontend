@@ -1,0 +1,124 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width  : 30%;
+    background : rgb(247, 246, 244);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 2.5;
+}
+
+nav {
+    width       : 15%;
+    height      : 100%;
+    min-width   : 10%;
+    position    : fixed;
+    top         : 0;
+    left        : 0;
+    border-right: solid;
+    border-color: #2a2917b7;
+}
+
+header {
+    margin    : 2.5rem;
+    text-align: center;
+    font-size : 2.4rem;
+    color     : #f5b041;
+}
+
+nav ul {
+    height    : 90%;
+    padding   : 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+nav li {
+    width     : 100%;
+    position  : relative;
+    list-style: none;
+    border-top: 2px solid;
+}
+
+nav a {
+    display        : block;
+    padding        : 1rem 1.2rem;
+    color          : rgb(0, 0, 0);
+    text-decoration: none;
+    cursor         : pointer;
+}
+
+main header {
+    text-align: left;
+    margin    : 0;
+}
+
+main {
+    position     : absolute;
+    margin-left  : 22rem;
+    padding      : 2rem;
+    margin-bottom: 10rem;
+}
+
+section article {
+    margin         : 1.5rem;
+    font-size      : 1.1rem;
+    justify-content: center;
+    text-align     : justify;
+    color          : rgb(10, 10, 10);
+}
+
+section li {
+    margin: 15px 0 0 20px;
+}
+
+code {
+    display         : block;
+    text-align      : left;
+    white-space     : pre-line;
+    position        : relative;
+    word-break      : normal;
+    word-wrap       : normal;
+    line-height     : 2;
+    color           : rgb(11, 51, 138);
+    background-color: #867d7d88;
+    padding         : 1rem;
+    margin          : 1.2rem;
+    border-radius   : 7px;
+}
+
+#Reference a {
+    color: dodgerblue;
+}
+
+@media (max-width: 800px) {
+    nav {
+        position  : absolute;
+        width     : 100%;
+        max-height: 280px;
+        margin    : 0;
+        padding   : 0;
+        top       : 0;
+        border    : none;
+        z-index   : 1;
+    }
+
+    nav ul {
+        border: 1px solid;
+        height: 200px;
+    }
+
+    main {
+        position   : relative;
+        margin-left: 0;
+        margin-top : 350px;
+        text-align : center;
+    }
+
+    main header {
+        text-align: center;
+    }
+}
